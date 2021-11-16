@@ -9,6 +9,22 @@ root.title("Restaurant Management System")
 text_Input = StringVar()
 operator = ""
 
+Tops = Frame(root, width = 1600,height = 50,bg = "powder blue", relief = SUNKEN)
+Tops.pack(side = TOP)
+
+f1 = Frame(root, width = 800,height = 700, bg = "powder blue", relief = SUNKEN)
+f1.pack(side = LEFT)
+
+f2 = Frame(root, width = 300,height = 700, bg = "powder blue", relief = SUNKEN)
+f2.pack(side = RIGHT)
+
+localTime = time.asctime(time.localtime(time.time()))
+
+lblInfo = Label(Tops, font = ('afial',50, 'bold'),text = "Restaurant Management Systems", fg = "Steel Blue", bd = 10, anchor = 'w')
+lblInfo.grid(row = 0,column = 0)
+lblDateTime = Label(Tops, font = ('afial',20, 'bold'),text = localTime, fg = "Steel Blue", bd = 10, anchor = 'w')
+lblDateTime.grid(row = 1,column = 0)
+
 def btnClick(numbers):
     global operator
     operator = operator + str(numbers)
@@ -44,7 +60,7 @@ def Ref():
     CostofChicken_Burger = CoChicBurger * 2.89
     CostofCheese_Burger = CheeseBurger * 2.69
 
-    CostofMeal = "",str('%.2f'% (CostofFries + CostofDrinks + CostofFilet + CostofBurger + CostofChicken_Burger + CostofCheese_Burger))
+    CostofMeal = "£",str('%.2f'% (CostofFries + CostofDrinks + CostofFilet + CostofBurger + CostofChicken_Burger + CostofCheese_Burger))
 
     PayTax = ((CostofFries + CostofDrinks + CostofFilet + CostofBurger + CostofChicken_Burger + CostofCheese_Burger) * 0.2)
 
@@ -52,11 +68,9 @@ def Ref():
 
     Ser_Charge = ((CostofFries + CostofDrinks + CostofFilet + CostofBurger + CostofChicken_Burger + CostofCheese_Burger) / 99)
 
-    Service = "", str('%.2f' % Ser_Charge)
-
-    OverAllCost = "", str('%.2f' % (PayTax + TotalCost + Ser_Charge))
-    PaidTax = "", str('%.2f' % PayTax)
-
+    Service = "£", str('%.2f' % Ser_Charge)
+    OverAllCost = "£", str('%.2f' % (PayTax + TotalCost + Ser_Charge))
+    PaidTax = "£", str('%.2f' % PayTax)
     Service_Charge.set(Service)
     Cost.set(CostofMeal)
     Tax.set(PaidTax)
@@ -80,21 +94,6 @@ def Reset():
     Chicken_Burger.set("")
     Cheese_Burger.set("")
 
-Tops = Frame(root, width = 1600,height = 50,bg = "powder blue", relief = SUNKEN)
-Tops.pack(side = TOP)
-
-f1 = Frame(root, width = 800,height = 700, bg = "powder blue", relief = SUNKEN)
-f1.pack(side = LEFT)
-
-f2 = Frame(root, width = 300,height = 700, bg = "powder blue", relief = SUNKEN)
-f2.pack(side = RIGHT)
-
-localTime = time.asctime(time.localtime(time.time()))
-
-lblInfo = Label(Tops, font = ('afial',50, 'bold'),text = "Restaurant Management Systems", fg = "Steel Blue", bd = 10, anchor = 'w')
-lblInfo.grid(row = 0,column = 0)
-lblInfo = Label(Tops, font = ('afial',20, 'bold'),text = localTime, fg = "Steel Blue", bd = 10, anchor = 'w')
-lblInfo.grid(row = 1,column = 0)
 
 txtDisplay = Entry(f2, font = ('arial',20,'bold'), textvariable = text_Input, bd = 30, insertwidth = 4,bg = "powder blue", justify = 'right')
 txtDisplay.grid(columnspan = 4)
@@ -167,15 +166,34 @@ lblDrinks.grid(row = 0,column =2)
 txtDrinks = Entry(f1, font = ('arial',16,'bold'), textvariable = rand, bd = 10, insertwidth = 4, bg = "#ffffff", justify = 'right')
 txtDrinks.grid(row = 0,column =3)
 
-lblDrinks = Label(f1, font = ('arial',16,'bold'), text = "Drinks", bd = 16, anchor = 'w')
-lblDrinks.grid(row = 0,column =2)
-txtDrinks = Entry(f1, font = ('arial',16,'bold'), textvariable = rand, bd = 10, insertwidth = 4, bg = "#ffffff", justify = 'right')
-txtDrinks.grid(row = 0,column =3)
+lblCost = Label(f1, font = ('arial',16,'bold'), text = "Cost of Meal", bd = 16, anchor = 'w')
+lblCost.grid(row = 1,column =2)
+txtCost = Entry(f1, font = ('arial',16,'bold'), textvariable = rand, bd = 10, insertwidth = 4, bg = "#ffffff", justify = 'right')
+txtCost.grid(row = 1,column =3)
 
+lblService = Label(f1, font = ('arial',16,'bold'), text = "Service Charge", bd = 16, anchor = 'w')
+lblService.grid(row = 2,column =2)
+txtService = Entry(f1, font = ('arial',16,'bold'), textvariable = rand, bd = 10, insertwidth = 4, bg = "#ffffff", justify = 'right')
+txtService.grid(row = 2,column =3)
+
+lblStateTax = Label(f1, font = ('arial',16,'bold'), text = "State Tax", bd = 16, anchor = 'w')
+lblStateTax.grid(row = 3,column =2)
+txtStateTax = Entry(f1, font = ('arial',16,'bold'), textvariable = rand, bd = 10, insertwidth = 4, bg = "#ffffff", justify = 'right')
+txtStateTax.grid(row = 3,column =3)
+
+lblSubTotal = Label(f1, font = ('arial',16,'bold'), text = "Sub Total", bd = 16, anchor = 'w')
+lblSubTotal.grid(row = 4,column =2)
+txtSubTotal = Entry(f1, font = ('arial',16,'bold'), textvariable = rand, bd = 10, insertwidth = 4, bg = "#ffffff", justify = 'right')
+txtSubTotal.grid(row = 4,column =3)
+
+lblTotalCost = Label(f1, font = ('arial',16,'bold'), text = "Total Cost", bd = 16, anchor = 'w')
+lblTotalCost.grid(row = 5,column =2)
+txtTotalCost = Entry(f1, font = ('arial',16,'bold'), textvariable = rand, bd = 10, insertwidth = 4, bg = "#ffffff", justify = 'right')
+txtTotalCost.grid(row = 5,column =3)
 
 btnTotal = Button(f1,padx = 16,pady = 8,bd = 16, fg = "black", font =('arial',16,'bold'),width = 10, text = "Total",bg = "powder blue",command = Ref).grid(row = 7,column = 1)
-btnTotal = Button(f1,padx = 16,pady = 8,bd = 16, fg = "black", font =('arial',16,'bold'),width = 10, text = "Reset",bg = "powder blue",command = Reset).grid(row = 7,column = 2)
-btnTotal = Button(f1,padx = 16,pady = 8,bd = 16, fg = "black", font =('arial',16,'bold'),width = 10, text = "Exit",bg = "powder blue",command = qExit).grid(row = 7,column = 3)
+btnReset = Button(f1,padx = 16,pady = 8,bd = 16, fg = "black", font =('arial',16,'bold'),width = 10, text = "Reset",bg = "powder blue",command = Reset).grid(row = 7,column = 2)
+btnExit = Button(f1,padx = 16,pady = 8,bd = 16, fg = "black", font =('arial',16,'bold'),width = 10, text = "Exit",bg = "powder blue",command = qExit).grid(row = 7,column = 3)
 
 
 root.mainloop()
