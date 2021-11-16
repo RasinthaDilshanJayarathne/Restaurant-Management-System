@@ -137,6 +137,42 @@ lblReference.grid(row = 0,column =0)
 txtReference = Entry(f1, font = ('arial',16,'bold'), textvariable = rand, bd = 10, insertwidth = 4, bg = "powder blue", justify = 'right')
 txtReference.grid(row = 0,column =1)
 
+lblFries = Label(f1, font = ('arial',16,'bold'), text = "Large Frise", bd = 16, anchor = 'w')
+lblFries.grid(row = 1,column =0)
+txtFries = Entry(f1, font = ('arial',16,'bold'), textvariable = rand, bd = 10, insertwidth = 4, bg = "powder blue", justify = 'right')
+txtFries.grid(row = 1,column =1)
+
+lblBurger = Label(f1, font = ('arial',16,'bold'), text = "Burger Meal", bd = 16, anchor = 'w')
+lblBurger.grid(row = 2,column =0)
+txtBurger = Entry(f1, font = ('arial',16,'bold'), textvariable = rand, bd = 10, insertwidth = 4, bg = "powder blue", justify = 'right')
+txtBurger.grid(row = 2,column =1)
+
+lblFilet = Label(f1, font = ('arial',16,'bold'), text = "Filet_o_Meal", bd = 16, anchor = 'w')
+lblFilet.grid(row = 3,column =0)
+txtFilet = Entry(f1, font = ('arial',16,'bold'), textvariable = rand, bd = 10, insertwidth = 4, bg = "powder blue", justify = 'right')
+txtFilet.grid(row = 3,column =1)
+
+lblChicken = Label(f1, font = ('arial',16,'bold'), text = "Chicken Meal", bd = 16, anchor = 'w')
+lblChicken.grid(row = 4,column =0)
+txtChicken = Entry(f1, font = ('arial',16,'bold'), textvariable = rand, bd = 10, insertwidth = 4, bg = "powder blue", justify = 'right')
+txtChicken.grid(row = 4,column =1)
+
+lblCheese = Label(f1, font = ('arial',16,'bold'), text = "Cheese Meal", bd = 16, anchor = 'w')
+lblCheese.grid(row = 5,column =0)
+txtCheese = Entry(f1, font = ('arial',16,'bold'), textvariable = rand, bd = 10, insertwidth = 4, bg = "powder blue", justify = 'right')
+txtCheese.grid(row = 5,column =1)
+
+lblDrinks = Label(f1, font = ('arial',16,'bold'), text = "Drinks", bd = 16, anchor = 'w')
+lblDrinks.grid(row = 0,column =2)
+txtDrinks = Entry(f1, font = ('arial',16,'bold'), textvariable = rand, bd = 10, insertwidth = 4, bg = "#ffffff", justify = 'right')
+txtDrinks.grid(row = 0,column =3)
+
+lblDrinks = Label(f1, font = ('arial',16,'bold'), text = "Drinks", bd = 16, anchor = 'w')
+lblDrinks.grid(row = 0,column =2)
+txtDrinks = Entry(f1, font = ('arial',16,'bold'), textvariable = rand, bd = 10, insertwidth = 4, bg = "#ffffff", justify = 'right')
+txtDrinks.grid(row = 0,column =3)
+
+
 btnTotal = Button(f1,padx = 16,pady = 8,bd = 16, fg = "black", font =('arial',16,'bold'),width = 10, text = "Total",bg = "powder blue",command = Ref).grid(row = 7,column = 1)
 btnTotal = Button(f1,padx = 16,pady = 8,bd = 16, fg = "black", font =('arial',16,'bold'),width = 10, text = "Reset",bg = "powder blue",command = Reset).grid(row = 7,column = 2)
 btnTotal = Button(f1,padx = 16,pady = 8,bd = 16, fg = "black", font =('arial',16,'bold'),width = 10, text = "Exit",bg = "powder blue",command = qExit).grid(row = 7,column = 3)
